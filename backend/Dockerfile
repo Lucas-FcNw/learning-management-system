@@ -1,22 +1,17 @@
-
 FROM eclipse-temurin:21-jdk-jammy AS build
 
 WORKDIR /workspace
 
-ARG GITHUB_USERNAME
-ARG GITHUB_TOKEN
-
+# Copia os arquivos essenciais
 COPY mvnw .
 COPY .mvn .mvn
 COPY pom.xml .
 COPY src src
 
-# Cria o settings.xml dinamicamente usando variáveis de ambiente
-RUN mkdir -p /root/.m2 && \
-	echo '<settings><servers><server><id>github</id><username>'"${GITHUB_USERNAME}"'</username><password>'"${GITHUB_TOKEN}"'</password></server></servers></settings>' > /root/.m2/settings.xml
-
+# Roda o build direto (sem criar settings.xml complexo)
 RUN chmod +x mvnw && ./mvnw -B -DskipTests package
 
+# Fase Final
 FROM eclipse-temurin:21-jre-jammy
 WORKDIR /app
 COPY --from=build /workspace/target/*.jar app.jar
