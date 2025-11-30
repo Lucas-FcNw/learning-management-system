@@ -4,5 +4,6 @@ public enum NodeType {
     USER,
     OPPORTUNITY,
     SKILL,
-    SUBJECT
+    SUBJECT,
+    THEME  // <--- Esta era a peça que faltava!
 }
