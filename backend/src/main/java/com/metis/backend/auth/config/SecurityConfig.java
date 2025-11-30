@@ -87,7 +87,7 @@ public class SecurityConfig {
         configuration.setAllowedOrigins(Arrays.asList(
                 "http://localhost:3000",
                 "http://localhost:3001",
-                "https://metis.app" // Adicione seu domínio de produção aqui
+                "https://learning-management-system-omega-eight.vercel.app/" 
         ));
         
         // Permite todos os métodos HTTP

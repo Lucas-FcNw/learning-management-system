@@ -21,7 +21,7 @@ spring:
               - openid
               - profile
               - email
-            redirect-uri: ${FRONTEND_CALLBACK_URL}/api/auth/callback/azure
+            redirect-uri: ${FRONTEND_CALLBACK_URL}/api/auth/callback/microsoft
             authorization-grant-type: authorization_code
         provider:
           azure:
