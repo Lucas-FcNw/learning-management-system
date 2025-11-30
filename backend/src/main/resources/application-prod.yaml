@@ -14,7 +14,7 @@ spring:
     oauth2:
       client:
         registration:
-          azure:
+          microsoft:
             client-id: ${AZURE_CLIENT_ID}
             client-secret: ${AZURE_CLIENT_SECRET}
             scope:
@@ -24,7 +24,7 @@ spring:
             redirect-uri: ${FRONTEND_CALLBACK_URL}/api/auth/callback/microsoft
             authorization-grant-type: authorization_code
         provider:
-          azure:
+          microsoft:
             issuer-uri: https://login.microsoftonline.com/${AZURE_TENANT_ID}/v2.0
             user-name-attribute: preferred_username
 
@@ -52,11 +52,9 @@ app:
   
   cors:
     allowed-origins: ${CORS_ALLOWED_ORIGINS}
-    # Exemplo: https://seu-dominio.com,https://www.seu-dominio.com
   
   frontend:
     callback-url: ${FRONTEND_CALLBACK_URL}
-    # Exemplo: https://seu-dominio.com/auth/callback
   
   allowed-email-domains:
     - mackenzie.br
