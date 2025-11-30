@@ -20,13 +20,6 @@
         <java.version>21</java.version>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>github</id>
-            <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/ImGabreuw/opportunity-recommendation-system</url>
-        </repository>
-    </repositories>
 
     <dependencies>
 
@@ -105,11 +98,6 @@
             <version>2.11.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.metis</groupId>
-            <artifactId>opportunity_recommendation_algorithm</artifactId>
-            <version>1.0.0</version>
-        </dependency>
 
         <!-- SDK para os serviços da Microsoft -->
         <dependency>
